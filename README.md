@@ -31,13 +31,21 @@ Installs to `~/.claude/skills/pr-guard/` (every project). Add `--project` to ins
 
 ## 🚀 Use
 
-In Claude Code, with uncommitted changes in a git repo:
+Two ways, same review — pick your style:
 
+**Automatic (skill)** — just describe the task; Claude triggers PR Guard:
 ```
 review my local changes
 ```
 
-PR Guard scopes the diff, reads each change in context, and reports:
+**Manual (slash command)** — type it explicitly:
+```
+/pr-guard
+/pr-guard --fix      # also patch issues and run your tests
+/pr-guard --strict   # zero-tolerance on architecture & conventions
+```
+
+Either way, PR Guard scopes the diff (working tree **and** unpushed commits), reads each change in context, and reports:
 
 ```
 ### 🚨 Critical Vulnerabilities
